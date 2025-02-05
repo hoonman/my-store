@@ -20,7 +20,8 @@ export class CartComponent implements OnInit {
 
   onSubmit(): void {
     this.items = this.cartService.clearCart();
-    
+    console.warn('your order has been submitted', this.checkoutForm.value);
+    this.checkoutForm.reset();
   }
 
   constructor(private cartService: CartService, private formBuilder: FormBuilder) { }
